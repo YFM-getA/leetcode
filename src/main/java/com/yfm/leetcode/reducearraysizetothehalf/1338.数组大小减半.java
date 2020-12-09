@@ -23,11 +23,11 @@ class Solution {
         }
         int c = 0;
         List<Integer> cc = countMap.values().stream().sorted().collect(Collectors.toList());
-        System.out.println(cc);
+        // System.out.println(cc);
         for (int i  = cc.size() - 1; i >=0; i--) {
             c += cc.get(i);   
             if (c >= arr.length / 2) {
-                return i + 1;     
+                return cc.size() - i;     
             }
         }
         return 0;
